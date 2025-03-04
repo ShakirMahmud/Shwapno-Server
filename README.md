@@ -62,9 +62,15 @@ npm install
 Create a `.env` file in the root folder and add the following:  
 ```env
 PORT=5000
-DB_USER=Shwapno
-DB_PASS=nwVnMELoXVJcmlil
-MONGO_URI=mongodb+srv://Shwapno:nwVnMELoXVJcmlil@your-cluster.mongodb.net/inventory
+DB_USER=your_database_username
+DB_PASS=your_database_password
+MONGO_URI=mongodb+srv://<DB_USER>:<DB_PASS>@your-cluster.mongodb.net/inventory
+```
+
+**Important:** Never expose sensitive credentials in public repositories! Use `.gitignore` to exclude `.env` from being committed:  
+
+```sh
+echo ".env" >> .gitignore
 ```
 
 4️⃣ **Start the server**  
@@ -91,3 +97,10 @@ Server should now be running at: `http://localhost:5000/`
 👤 **Md. Shakir Mahmud** – MERN Developer  
 🔗 [LinkedIn](https://www.linkedin.com/in/shakirmahmud9/)  
 🌍 [Portfolio](https://shakir-portfolio.vercel.app/)  
+
+---
+
+### ⚠️ Security Best Practices  
+- **Never hardcode credentials in code or README files.**  
+- **Use `.env` files and ensure they are added to `.gitignore`.**  
+- **Use environment variables in cloud deployments instead of storing them in code.**  
